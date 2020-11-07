@@ -1,6 +1,6 @@
 import React from "react";
+import Car from './components/Car';
 import './styles/root.scss';
-import { format } from "prettier";
 
 export default class App extends React.Component {
 	constructor (props) {
@@ -9,11 +9,11 @@ export default class App extends React.Component {
 	}
 
 	render () {
-
 		return (
-			<>
-
-			</>
+			<div className="App">
+				<h1>Hello!</h1>
+				<Car/>
+			</div>
 		);
 	}
 }
