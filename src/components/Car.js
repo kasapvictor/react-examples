@@ -1,23 +1,14 @@
 import React from "react";
 
-/*
- #1
- */
-// const car  = () => {
-//   return (
-//     <div>
-//       <h3>Ford Mustang</h3>
-//     </div>
-//   )
-// }
-// export default car;
-
-/*
- #2
- */
-export default () => (
+export default ({name, year, color, children}) => (
     <div>
-      <h3>Ford Mustang</h3>
+      <h3>{name}</h3>
+      <div> {children} </div>
+      <ul>
+        <li>Year: {year}</li>
+        <li>Color: {color}</li>
+      </ul>
+
     </div>
   )
 

@@ -12,7 +12,9 @@ export default class App extends React.Component {
 		return (
 			<div className="App">
 				<h1>Hello!</h1>
-				<Car/>
+				<Car name='Ford Mustang' year={1984} color='red'>
+					<p>Description: Lorem ipsum dolor sit amet.</p>
+				</Car>
 			</div>
 		);
 	}
