@@ -10,3 +10,5 @@
 
 ## Create state and change to new state
 
+## Passed params to event click of component
+
