@@ -38,7 +38,7 @@ export default class App extends React.Component {
 				<Car
 					name={cars[1].name}
 					year={cars[1].year}
-					onChangeTitle={this.changeTitleHandler.bind(this, cars[1].name)}
+					onChangeTitle={() => this.changeTitleHandler(cars[1].name)}
 				/>
 				<Car
 					name={cars[2].name}
