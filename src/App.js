@@ -11,18 +11,17 @@ export default class App extends React.Component {
 				{ name: 'Audi', 	year: 2016 },
 				{ name: 'Mazda', 	year: 2010 }
 			],
-			pageTitle: 'My cars'
+			pageTitle: 'My cars',
+			showCars: false
 		}
 	}
 
-	changeTitleHandler = (newTitle) => {
-		this.setState({
-			pageTitle: newTitle
-		});
+	changeTitleHandler = pageTitle => {
+		this.setState({pageTitle})
 	}
 
-	handleInput = (event) => {
-		this.changeTitleHandler(event.target.value);
+	toggleCars = () => {
+		this.setState( {showCars: !this.state.showCars} )
 	}
 
 	render () {
@@ -30,11 +29,13 @@ export default class App extends React.Component {
 			<div className="App">
 				<div>
 					<h1>{this.state.pageTitle}</h1>
-					<input type="text" onChange={this.handleInput}/>
-					<button onClick={this.changeTitleHandler.bind(this, '_changed_')}>Change title</button>
+
+					<button onClick={ this.toggleCars }>Show cars</button>
 				</div>
 
-				{ this.state.cars.map((car, index) => {
+				{
+					this.state.showCars
+					? this.state.cars.map((car, index) => {
 						return <Car
 										key={index}
 										name={car.name}
@@ -42,6 +43,7 @@ export default class App extends React.Component {
 										onChangeTitle={ () => this.changeTitleHandler(car.name)}
 									/>
 					})
+					: null
 				}
 			</div>
 		);
