@@ -1,12 +1,11 @@
 import React from "react";
 
-export default (props, {name, year, color, children}) => (
+export default (props) => (
     <div>
-      <h3>{name}</h3>
-      <div> {children} </div>
+      <h3>{props.name}</h3>
       <ul>
-        <li>Year: {year}</li>
-        <li>Color: {color}</li>
+        <li>Year: {props.year}</li>
+        <li>Color: {props.color}</li>
       </ul>
       <button onClick={props.onChangeTitle}>Click</button>
     </div>
