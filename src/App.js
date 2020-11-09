@@ -21,12 +21,17 @@ export default class App extends React.Component {
 		});
 	}
 
+	handleInput = (event) => {
+		this.changeTitleHandler(event.target.value);
+	}
+
 	render () {
 		const cars = this.state.cars;
 		return (
 			<div className="App">
 				<div>
 					<h1>{this.state.pageTitle}</h1>
+					<input type="text" onChange={this.handleInput}/>
 					<button onClick={this.changeTitleHandler.bind(this, '_changed_')}>Change title</button>
 				</div>
 
