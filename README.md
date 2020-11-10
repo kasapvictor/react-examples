@@ -47,3 +47,10 @@
 `npm install node-sass`
 
 Переименование файов .css в .scss
+
+## CSS Модули
+Переименование стилей в `Car.module.scss`
+
+Импорт модуля в компонент `import classes from './Car.module.scss';`
+
+Вывод класса в элементе `className={classes.Car}`
