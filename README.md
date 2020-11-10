@@ -35,3 +35,11 @@
 
 ## Переключение стилей по условию
 Через условие if(...) динамически меняется класс у элемента
+
+## Установка пакета Radium
+[Raduim GitHub](https://github.com/FormidableLabs/radium) 
+
+`npm install --save radium`
+
+Весь компонент перед экспортом оборачивается в Radium
+
