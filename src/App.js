@@ -1,8 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import Car from './components/Car';
 import './styles/root.scss';
 
-export default class App extends React.Component {
+export default class App extends Component {
 	constructor (props) {
 		super(props);
 		this.state = {
@@ -37,8 +37,16 @@ export default class App extends React.Component {
 		this.setState({ cars })
 	}
 
-	render () {
+	componentWillMount () {
+		console.log('will mount');
+	}
 
+	componentDidMount () {
+		console.log('did mount');
+	}
+
+	render () {
+		console.log('rendered');
 		let cars = null;
 
 		if (this.state.showCars) {
