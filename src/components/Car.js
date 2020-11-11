@@ -7,6 +7,23 @@ class Car extends React.Component {
     super (props);
   }
 
+  componentWillReceiveProps ( nextProps ) {
+    console.log('componentWillReceiveProps', nextProps);
+  }
+
+  shouldComponentUpdate ( nextProps, nextState ) {
+    console.log('shouldComponentUpdate', nextProps, nextState);
+    return true;
+  }
+
+  componentWillUpdate ( nextProps, nextState ) {
+    console.log('componentWillUpdate', nextProps, nextState);
+  }
+
+  componentDidUpdate () {
+    console.log('componentDidUpdate');
+  }
+
   render () {
     const inputClasses = [classes.input];
 
@@ -48,4 +65,5 @@ class Car extends React.Component {
   }
 }
 
-export default Radium(Car);
+// export default Radium(Car);
+export default Car;
