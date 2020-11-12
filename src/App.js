@@ -70,6 +70,7 @@ export default class App extends Component {
 			<div className="App">
 				<div>
 					<Counter/>
+					<hr/>
 					<h1>{this.state.pageTitle}</h1>
 					<button onClick={ this.toggleCars }>Show cars</button>
 				</div>
