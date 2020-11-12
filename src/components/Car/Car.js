@@ -1,27 +1,10 @@
 import React from "react";
-import Radium from 'radium';
 import classes from './Car.module.scss';
+import withClass from '../hoc/withClass';
 
 class Car extends React.Component {
   constructor (props) {
     super (props);
-  }
-
-  componentWillReceiveProps ( nextProps ) {
-    console.log('componentWillReceiveProps', nextProps);
-  }
-
-  shouldComponentUpdate ( nextProps, nextState ) {
-    console.log('shouldComponentUpdate', nextProps, nextState);
-    return true;
-  }
-
-  componentWillUpdate ( nextProps, nextState ) {
-    console.log('componentWillUpdate', nextProps, nextState);
-  }
-
-  componentDidUpdate () {
-    console.log('componentDidUpdate');
   }
 
   render () {
@@ -46,8 +29,9 @@ class Car extends React.Component {
         cursor: 'pointer'
       }
     }
+
     return (
-      <div className={classes.Car} style={style}>
+      <React.Fragment>
         <h3>{ this.props.name }</h3>
         <ul>
           <li>Year: { this.props.year }</li>
@@ -60,10 +44,9 @@ class Car extends React.Component {
           className={inputClasses.join(' ')}
         />
         <button onClick={ this.props.onDelete }>Delete</button>
-      </div>
+      </React.Fragment>
     )
   }
 }
 
-// export default Radium(Car);
-export default Car;
+export default withClass(Car, classes.Car);
